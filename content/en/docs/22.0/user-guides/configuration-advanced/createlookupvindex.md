@@ -53,7 +53,7 @@ mysql> desc corder;
 +-------------+----------------+------+-----+---------+-------+
 | order_id    | bigint         | NO   | PRI | NULL    |       |
 | customer_id | bigint         | YES  |     | NULL    |       |
-| sku         | varbinary(128) | YES  |     | NULL    |       |
+| sku         | varchar(128) | YES  |     | NULL    |       |
 | price       | bigint         | YES  |     | NULL    |       |
 +-------------+----------------+------+-----+---------+-------+
 4 rows in set (0.01 sec)
@@ -480,7 +480,7 @@ mysql> desc corder_lookup;
 +-------------+----------------+------+-----+---------+-------+
 | Field       | Type           | Null | Key | Default | Extra |
 +-------------+----------------+------+-----+---------+-------+
-| sku         | varbinary(128) | NO   | PRI | NULL    |       |
+| sku         | varchar(128) | NO   | PRI | NULL    |       |
 | keyspace_id | varbinary(128) | YES  |     | NULL    |       |
 +-------------+----------------+------+-----+---------+-------+
 2 rows in set (0.01 sec)

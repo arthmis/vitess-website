@@ -116,7 +116,7 @@ Putting it all together, we have a VSchema similar to the following for the `cus
   "sharded": true,
   "vindexes": {
     "hash": {
-      "type": "hash"
+      "type": "xxhash"
     }
   },
   "tables": {
@@ -124,7 +124,7 @@ Putting it all together, we have a VSchema similar to the following for the `cus
       "column_vindexes": [
         {
           "column": "customer_id",
-          "name": "hash"
+          "name": "xxhash"
         }
       ],
       "auto_increment": {
@@ -136,7 +136,7 @@ Putting it all together, we have a VSchema similar to the following for the `cus
       "column_vindexes": [
         {
           "column": "customer_id",
-          "name": "hash"
+          "name": "xxhash"
         }
       ],
       "auto_increment": {

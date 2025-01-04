@@ -142,7 +142,7 @@ $ cat vschema.json
         "sharded": true,
         "vindexes": {
             "hash": {
-                "type": "hash"
+                "type": "xxhash"
             }
         },
         "tables": {
@@ -150,7 +150,7 @@ $ cat vschema.json
                 "column_vindexes": [
                     {
                         "column": "user_id",
-                        "name": "hash"
+                        "name": "xxhash"
                     }
                 ]
             }

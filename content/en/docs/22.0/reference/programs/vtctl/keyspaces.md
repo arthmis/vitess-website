@@ -225,8 +225,8 @@ Move table(s) to another keyspace, table_specs is a list of tables or the tables
 Example: 
 ```json
 {
-  "t1": {"column_vindexes": [{"column": "id1", "name": "hash"}]}, 
-  "t2": {"column_vindexes": [{"column": "id2", "name": "hash"}]}
+  "t1": {"column_vindexes": [{"column": "id1", "name": "xxhash"}]}, 
+  "t2": {"column_vindexes": [{"column": "id2", "name": "xxhash"}]}
 }
 ```  
 

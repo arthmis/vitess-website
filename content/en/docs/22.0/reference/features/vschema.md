@@ -131,7 +131,7 @@ VSchema:
   "sharded": true,
   "vindexes": {
     "hash": {
-      "type": "hash"
+      "type": "xxhash"
     }
   },
   "tables": {
@@ -139,7 +139,7 @@ VSchema:
       "column_vindexes": [
         {
           "column": "user_id",
-          "name": "hash"
+          "name": "xxhash"
         }
       ]
     }
@@ -181,7 +181,7 @@ VSchema:
   "sharded": true,
   "vindexes": {
     "hash": {
-      "type": "hash"
+      "type": "xxhash"
     }
   },
   "tables": {
@@ -189,7 +189,7 @@ VSchema:
       "column_vindexes": [
         {
           "column": "user_id",
-          "name": "hash"
+          "name": "xxhash"
         }
       ],
       "auto_increment": {

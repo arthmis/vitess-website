@@ -60,7 +60,7 @@ Finally, we must associate `customer.corder_id` with the lookup vindex:
 ```json
       "column_vindexes": [{
           "column": "customer_id",
-          "name": "hash"
+          "name": "xxhash"
         }, {
           "column": "corder_id",
           "name": "corder_keyspace_idx"

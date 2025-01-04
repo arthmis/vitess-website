@@ -21,28 +21,28 @@ In our example, we are going to designate `customer` as a sharded keyspace, and 
 create table customer(customer_id bigint, uname varchar(128), primary key(customer_id));
 ```
 
-In the VSchema, we need to designate which column should be the Primary Vindex, and choose the vindex type for it. The `customer_id` column seems to be the natural choice. Since it is a number, we will choose `hash` as the vindex type:
+In the VSchema, we need to designate which column should be the Primary Vindex, and choose the vindex type for it. The `customer_id` column seems to be the natural choice. Since it is a number, we will choose `xxhash` as the vindex type:
 
 ```json
 {
   "sharded": true,
   "vindexes": {
     "hash": {
-      "type": "hash"
+      "type": "xxhash"
     }
   },
   "tables": {
     "customer": {
       "column_vindexes": [{
         "column": "customer_id",
-        "name": "hash"
+        "name": "xxhash"
       }]
     }
   }
 }
 ```
 
-In the above section, we are instantiating a vindex named `hash` from the vindex type `hash`. Such instantiations are listed in the `vindexes` section of the vschema. The tables are expected to refer to the instantiated name. There are a few reasons why this additional level of indirection is necessary:
+In the above section, we are instantiating a vindex named `hash` from the vindex type `xxhash`. Such instantiations are listed in the `vindexes` section of the vschema. The tables are expected to refer to the instantiated name. There are a few reasons why this additional level of indirection is necessary:
 
 * As we will see later, vindexes can be instantiated with different input parameters. In such cases, they have to have their own distinct names.
 * Vindexes can be shared by tables, and this has special meaning. We will cover this in a later section.

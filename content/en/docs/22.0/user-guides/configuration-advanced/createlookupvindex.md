@@ -98,7 +98,7 @@ $ vtctldclient --server localhost:15999 GetVSchema customer
   "sharded": true,
   "vindexes": {
     "hash": {
-      "type": "hash",
+      "type": "xxhash",
       "params": {},
       "owner": ""
     }
@@ -109,7 +109,7 @@ $ vtctldclient --server localhost:15999 GetVSchema customer
       "column_vindexes": [
         {
           "column": "customer_id",
-          "name": "hash",
+          "name": "xxhash",
           "columns": []
         }
       ],
@@ -127,7 +127,7 @@ $ vtctldclient --server localhost:15999 GetVSchema customer
       "column_vindexes": [
         {
           "column": "customer_id",
-          "name": "hash",
+          "name": "xxhash",
           "columns": []
         }
       ],

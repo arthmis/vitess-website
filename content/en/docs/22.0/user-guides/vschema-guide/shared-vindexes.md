@@ -35,7 +35,7 @@ VSchema:
     "corder": {
       "column_vindexes": [{
           "column": "customer_id",
-          "name": "hash"
+          "name": "xxhash"
         }],
       "auto_increment": {
         "column": "corder_id",

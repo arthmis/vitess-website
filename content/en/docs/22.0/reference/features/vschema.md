@@ -130,7 +130,7 @@ VSchema:
 {
   "sharded": true,
   "vindexes": {
-    "hash": {
+    "xxhash": {
       "type": "xxhash"
     }
   },
@@ -147,7 +147,7 @@ VSchema:
 }
 ```
 
-Because Vindexes can be shared, the JSON requires them to be specified in a separate `vindexes` section, and then referenced by name from the `tables` section. The VSchema above simply states that `user_id` uses `hash` as Primary Vindex. The first Vindex of every table must be the Primary Vindex.
+Because Vindexes can be shared, the JSON requires them to be specified in a separate `vindexes` section, and then referenced by name from the `tables` section. The VSchema above simply states that `user_id` uses `xxhash` as Primary Vindex. The first Vindex of every table must be the Primary Vindex.
 
 ### Specifying A Sequence
 
@@ -180,7 +180,7 @@ VSchema:
 {
   "sharded": true,
   "vindexes": {
-    "hash": {
+    "xxhash": {
       "type": "xxhash"
     }
   },

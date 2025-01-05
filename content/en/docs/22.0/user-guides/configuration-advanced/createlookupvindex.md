@@ -89,7 +89,7 @@ mysql> select * from corder;
 </br>
 
 If we look at the [VSchema](../../../reference/features/vschema/) for the
-`customer.corder` table, we will see there is a `hash` index on the
+`customer.corder` table, we will see there is a `xxhash` index on the
 `customer_id` column:
 
 ```json
@@ -97,7 +97,7 @@ $ vtctldclient --server localhost:15999 GetVSchema customer
 {
   "sharded": true,
   "vindexes": {
-    "hash": {
+    "xxhash": {
       "type": "xxhash",
       "params": {},
       "owner": ""
@@ -181,7 +181,7 @@ mysql> select * from corder;
 
 Note that this skewed distribution is completely coincidental — for larger
 numbers of rows we would expect the distribution to be approximately even
-for a `hash` index.
+for a `xxhash` index.
 
 Now let's say we want to add a lookup Vindex on the `sku` column.
 We can use a [`consistent_lookup` or `consistent_lookup_unique`](../../vschema-guide/unique-lookup/)
@@ -532,7 +532,7 @@ mysql> vexplain plan select * from corder where customer_id = 1;
 	"Values": [
 		"INT64(1)"
 	],
-	"Vindex": "hash"
+	"Vindex": "xxhash"
 } |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 1 row in set (0.00 sec)

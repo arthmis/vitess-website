@@ -141,7 +141,7 @@ $ cat vschema.json
     "ks1": {
         "sharded": true,
         "vindexes": {
-            "hash": {
+            "xxhash": {
                 "type": "xxhash"
             }
         },

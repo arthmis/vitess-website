@@ -45,7 +45,7 @@ Example usage in VSchema:
     "params": {
       "column_count": "3",
       "column_bytes": "1,3,4",
-      "column_vindex": "hash,binary,unicode_loose_xxhash"
+      "column_vindex": "xxhash,binary,unicode_loose_xxhash"
     }
   }
 }
